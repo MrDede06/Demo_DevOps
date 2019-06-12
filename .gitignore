@@ -11,6 +11,4 @@ main/__pycache__/urls.cpython-36.pyc
 main/__pycache__/views.cpython-36.pyc
 main/migrations/0001_initial.py
 main/migrations/__pycache__/
-000-default.conf
-apache2.conf
-
+static/
