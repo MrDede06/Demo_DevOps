@@ -1,16 +1,23 @@
 {% extends 'main/header.html' %}
+{% load static %}
 
 {% block content %}
-  <div class="row">
-    {% for tut in tutorials %}
-        <div class="col s12 m6">
-          <div class="card blue-grey darken-1 hoverable">
-            <div class="card-content white-text">
-              <span class="card-title">{{tut.tutorial_title}}</span>
-              <p style="font-size:70%">Published {{tut.tutorial_published}}</p>
-              <p>{{tut.tutorial_content|safe}}</p>
+  {% if user.is_authenticated %}
+    <div class="row">
+      {% for tut in tutorials %}
+          <div class="col s12 m6">
+           <div class="card blue-grey darken-1 hoverable">
+              <div class="card-content white-text">
+                <span class="card-title">{{tut.tutorial_title}}</span>
+                <p style="font-size:70%">Published {{tut.tutorial_published}}</p>
+                <p>{{tut.tutorial_content|safe}}</p>
+              </div>
             </div>
           </div>
-        </div>
-    {% endfor %}
+      {% endfor %}
+    {% else %}
+      <h1>Please <a href="/login" target="blank"><strong>login</strong></a> or <a href="/register" target="blank"><strong>sign-up</strong></a> to display tutorials </h1>
+      <img src="{% static 'main/images/devops_image.jpg' %}">
+      <img src="{% static 'main/images/devops.jpg' %}">
+    {% endif %} 
 {% endblock %}
