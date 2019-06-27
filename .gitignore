@@ -14,4 +14,4 @@ main/migrations/__pycache__/
 static/
 *.pyc
 main/tests/chromedriver
-
+*sql
