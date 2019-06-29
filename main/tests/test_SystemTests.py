@@ -1,4 +1,5 @@
 from selenium import webdriver
+from webdriver_manager.chrome import ChromeDriverManager
 from django.contrib.staticfiles.testing import StaticLiveServerTestCase
 from django.urls import reverse
 import time
@@ -8,15 +9,7 @@ from main.views import *
 class MySystemTests(StaticLiveServerTestCase):
     
     def setUp(self):
-        self.options = webdriver.ChromeOptions()
-        CHROMEDRIVER_PATH = '/var/www/Demo_DevOps/main/tests/chromedriver' 
-        self.options.add_argument("start-maximized")
-        self.options.add_argument('--disable-gpu')
-        self.options.add_argument("disable-infobars")
-        self.options.add_argument("--disable-extensions")
-        self.options.add_argument("--no-sandbox")
-        self.options.add_argument("--disable-dev-shm-usage")
-        self.browser = webdriver.Chrome( options=self.options)        
+        self.browser = webdriver.Chrome('/var/www/Demo_DevOps/main/tests/chromedriver')        
         self.data = {
             'username': 'ttttestclientt',
             'password1': 'test123',
