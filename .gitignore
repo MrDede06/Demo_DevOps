@@ -15,3 +15,5 @@ static/
 *.pyc
 main/tests/chromedriver
 *sql
+.coverage
+
