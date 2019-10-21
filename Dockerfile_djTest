@@ -1,0 +1,9 @@
+FROM dedelinka/docker_test:django_test
+COPY   . /var/www/Demo_DevOps/
+WORKDIR /var/www/Demo_DevOps
+RUN mv /var/www/Demo_DevOps/settings.py /var/www/Demo_DevOps/django_project/
+#RUN python3 manage.py collectstatic
+RUN python3 manage.py makemigrations
+RUN python3 manage.py migrate
+CMD  python3 manage.py test main.tests.test_CT
+#ENTRYPOINT ["python3 /var/www/Demo_DevOps/manage.py test"]
