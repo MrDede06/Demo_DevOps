@@ -1,0 +1,9 @@
+FROM dedelinka/docker_test:django_test
+RUN pip3 install coverage
+COPY   . /var/www/Demo_DevOps/
+WORKDIR /var/www/Demo_DevOps
+#RUN mv /var/www/Demo_DevOps/settings.py /var/www/Demo_DevOps/django_project/
+RUN python3 manage.py makemigrations
+RUN python3 manage.py migrate
+RUN coverage run --source='.' manage.py test main/tests || exit 0
+CMD coverage report -m
