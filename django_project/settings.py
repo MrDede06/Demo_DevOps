@@ -80,8 +80,8 @@ DATABASES = {
         'NAME': 'myproject',
         'USER': 'postgres',
         'PASSWORD': 'password',
-        'HOST': 'localhost',
-        'PORT': '',
+        'HOST': 'rdsdb.cyddnjg1pueb.us-east-1.rds.amazonaws.com',
+        'PORT': '5432',
     }
 }
 
