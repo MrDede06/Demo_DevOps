@@ -80,7 +80,7 @@ DATABASES = {
         'NAME': 'myproject',
         'USER': 'postgres',
         'PASSWORD': 'password',
-        'HOST': 'rdsdb.cyddnjg1pueb.us-east-1.rds.amazonaws.com',
+        'HOST': 'dbkub.cyddnjg1pueb.us-east-1.rds.amazonaws.com',
         'PORT': '5432',
     }
 }

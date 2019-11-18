@@ -1,0 +1,9 @@
+version: "3.2"
+
+services:
+  django-apache2:
+    image: dedelinka/docker_test:production_django
+    ports:
+      - '80:8000'
+    volumes:
+      - "/root/Demo_DevOps:/var/www/Demo_DevOps/"
