@@ -1,0 +1,21 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: django-apache2
+  labels:
+    app: django-apache2
+spec:
+  containers:
+  - name: container-django-apache2
+    image: dedelinka/docker_test:production_django
+    ports:
+    - name: app-port       
+      containerPort: 8000
+    volumeMounts:
+    - mountPath: /var/www/Demo_DevOps/
+      name: django-apache2-claim0
+  volumes:
+  - name: django-apache2-claim0
+    hostPath: 
+      path: /root/Demo_DevOps/
+
