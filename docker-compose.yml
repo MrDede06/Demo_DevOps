@@ -6,4 +6,4 @@ services:
     ports:
       - '80:8000'
     volumes:
-      - "/root/Demo_DevOps:/var/www/Demo_DevOps/"
+      - "/home/ubuntu/Demo_DevOps:/var/www/Demo_DevOps/"

@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: service-django-apache2
+spec:
+  ports:
+  - port: 80
+    protocol: TCP
+    targetPort: app-port
+  selector:
+    deployment: my-production-deployment
+  type: LoadBalancer
+
