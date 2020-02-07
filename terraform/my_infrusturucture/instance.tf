@@ -9,6 +9,11 @@ resource "azurerm_virtual_machine" "local_VM1" {
   delete_os_disk_on_termination = true
   delete_data_disks_on_termination = true
 
+  identity {
+    type = "SystemAssigned"
+  }
+
+
   storage_image_reference {
     publisher = "Canonical"
     offer     = "UbuntuServer"
