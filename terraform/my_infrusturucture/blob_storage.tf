@@ -1,3 +1,4 @@
+/*
 resource "random_string" "random-name" {
   length  = 5
   upper   = false
@@ -62,3 +63,4 @@ resource "azurerm_role_assignment" "blobrw_assignment" {
   principal_id       = azurerm_virtual_machine.local_VM1.identity.0.principal_id
 }
 
+*/

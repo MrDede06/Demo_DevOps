@@ -21,6 +21,15 @@ resource "azurerm_subnet" "local_subnet_1" {
   resource_group_name  = azurerm_resource_group.local_resource_group.name
   virtual_network_name = azurerm_virtual_network.local_virtual_network.name
   address_prefix       = "10.0.0.0/28"
+  service_endpoints    = ["Microsoft.Sql"]
+}
+
+resource "azurerm_subnet" "local_subnet_2" {
+  name                 = "subnet2"
+  resource_group_name  = azurerm_resource_group.local_resource_group.name
+  virtual_network_name = azurerm_virtual_network.local_virtual_network.name
+  address_prefix       = "10.0.0.16/28"
+  service_endpoints    = ["Microsoft.Sql"]
 }
 
 resource "azurerm_network_interface" "local_nic" {
@@ -33,12 +42,20 @@ resource "azurerm_network_interface" "local_nic" {
     name                          = "instance1"
     subnet_id                     = azurerm_subnet.local_subnet_1.id
     private_ip_address_allocation = "Dynamic"
-    public_ip_address_id          = azurerm_public_ip.local_public_ip.id
+#    public_ip_address_id          = azurerm_public_ip.local_public_ip.id
+    load_balancer_backend_address_pools_ids =  [azurerm_lb_backend_address_pool.example_backend.id]
   }
 }
-
+/*
 resource "azurerm_public_ip" "local_public_ip" {
     name                         = "instance1-public-ip"
+    location                     = var.location
+    resource_group_name          = azurerm_resource_group.local_resource_group.name
+    allocation_method            = "Dynamic"
+}
+*/
+resource "azurerm_public_ip" "local_public_ip2" {
+    name                         = "instance1-public-ip2"
     location                     = var.location
     resource_group_name          = azurerm_resource_group.local_resource_group.name
     allocation_method            = "Dynamic"
