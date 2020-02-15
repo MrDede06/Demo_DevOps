@@ -77,10 +77,10 @@ WSGI_APPLICATION = 'django_project.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'myproject',
+        'NAME': 'postgres@mypostgresdb12r43dsffwe',
         'USER': 'postgres',
-        'PASSWORD': 'password',
-        'HOST': 'dbkub.cyddnjg1pueb.us-east-1.rds.amazonaws.com',
+        'PASSWORD': 'Leanback06',
+        'HOST': 'mypostgresdb12r43dsffwe.postgres.database.azure.com',
         'PORT': '5432',
     }
 }
