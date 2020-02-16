@@ -77,8 +77,8 @@ WSGI_APPLICATION = 'django_project.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'postgres@mypostgresdb12r43dsffwe',
-        'USER': 'postgres',
+        'NAME': 'demodb',
+        'USER': 'postgres@mypostgresdb12r43dsffwe',
         'PASSWORD': 'Leanback06',
         'HOST': 'mypostgresdb12r43dsffwe.postgres.database.azure.com',
         'PORT': '5432',
